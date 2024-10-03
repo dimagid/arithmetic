@@ -14,8 +14,7 @@ This library can be used in any Clojure project that requires arithmetic operati
 
 ### deps.edn dependency information:
 ```clojure
-{:deps
- {io.github.dimagid/arithmetic {:git/tag "v0.0.1" :git/sha "2b44d37"}}}
+io.github.dimagid/arithmetic {:git/tag "v0.0.1" :git/sha "03b14a4"}
 ```
 
 ### Leiningen dependency information:
