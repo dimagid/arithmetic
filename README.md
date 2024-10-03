@@ -11,7 +11,7 @@ dimagid/arithmetic is a Clojure library that provides a collection of mathematic
 
 ## Add as a dependency
 
-This library can be used in any Clojure project that requires arithmetic operations. Simply import the desired functions and use them directly in your code.
+Add this library as a dependency to your Clojure project to access its functions. 
 
 ### deps.edn dependency information:
 ```clojure
