@@ -108,11 +108,11 @@
   "
   [n]
   {:pre [(pos-int? n)]}
-  (if (= 1 n) 2 (last (primes n))))
+  (if (= 1 n) 2 (peek (primes n))))
 
-(def scales ["unit" "tens" "hundreds" "thousands" "ten thousands" "hundred thousands" "millions" "ten millions" "hundred millions" "billions" "ten billions" "hundred billions" "trillions"])
+(def ^:private scales ["unit" "tens" "hundreds" "thousands" "ten thousands" "hundred thousands" "millions" "ten millions" "hundred millions" "billions" "ten billions" "hundred billions" "trillions"])
 
-(def zero-arithmetic-properties
+(def ^:private zero-arithmetic-properties
   {:is-even-or-odd? :even,
    :perfect-square? false,
    :spellout-number "zero",
