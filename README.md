@@ -15,12 +15,12 @@ This library can be used in any Clojure project that requires arithmetic operati
 
 ### deps.edn dependency information:
 ```clojure
-io.github.dimagid/arithmetic {:git/tag "v0.0.1" :git/sha "03b14a4"}
+io.github.dimagid/arithmetic {:git/tag "v0.0.1" :git/sha "c61a2b1"}
 ```
 
 ### Leiningen dependency information:
 ```clojure
-:dependencies [[io.github.dimagid/arithmetic "v0.0.1" :git/url "https://github.com/dimagid/arithmetic.git" :git/sha "03b14a4"]]
+:dependencies [[io.github.dimagid/arithmetic "v0.0.1" :git/url "https://github.com/dimagid/arithmetic.git" :git/sha "c61a2b1"]]
 ```
 
 ## Usage
