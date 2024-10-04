@@ -20,13 +20,8 @@
 ;; * Calculate arithmetic properties such as the sum of divisors and the perfection of a number.
 ;; * Provide a word representation of a number.
 ;; * Calculate the scale of a number (units, tens, hundreds, etc.).
-;;
-;; Usage:
-;; ------
-;; This library can be used in any Clojure project that requires arithmetic operations.
-;; The functions can be imported and used directly in the code.
-
 ;; ---------------------------------------------------------
+
 
 (ns dimagid.arithmetic
   (:require
@@ -96,7 +91,7 @@
   "
   [n]
   {:pre [(pos-int? n)]}
-  (into [] (filter #(<= % n)) (primes n)))
+  (into [] (take-while #(<= % n)) (primes n)))
 
 (defn nth-prime
   "Given a positive integer `n`, returns the nth prime number.
