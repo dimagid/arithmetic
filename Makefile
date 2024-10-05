@@ -18,11 +18,13 @@
 
 # .PHONY: ensures target used rather than matching file name
 # https://makefiletutorial.com/#phony
-.PHONY: all lint deps dist pre-commit-check repl test test-ci test-watch clean changelog
+.PHONY: all lint deps dist pre-commit-check repl test test-ci test-watch clean
 
 # ------- Makefile Variables --------- #
 # run help if no target specified
 .DEFAULT_GOAL := help
+
+OUTDATED_FILE := outdated-$(shell date +%y-%m-%d-%T).org
 
 # Column the target description is printed from
 HELP-DESCRIPTION-SPACING := 24
@@ -51,6 +53,10 @@ help:  ## Describe available tasks in Makefile
 repl:  ## Run Clojure REPL with rich terminal UI (Rebel Readline)
 	$(info --------- Run Rebel REPL ---------)
 	clojure -M:test/env:repl/reloaded
+
+outdated: ## Check deps.edn & GitHub actions for new versions
+	$(info --------- Search for outdated libraries ---------)
+	- clojure -T:search/outdated > $(OUTDATED_FILE)
 
 deps: deps.edn  ## Prepare dependencies for test and dist targets
 	$(info --------- Download test and service libraries ---------)
@@ -132,17 +138,6 @@ lint-fix:  ## Run MegaLinter with applied fixes and custom configuration (node.j
 lint-clean:  ## Clean MegaLinter report information
 	$(info --------- MegaLinter Clean Reports ---------)
 	- rm -rf ./megalinter-reports
-# ------------------------------------ #
-
-# ------- Generate CHANGELOG.md -------- #
-# changelog: CHANGELOG.md  ## Generate CHANGELOG.md
-# 	$(info --------- Generate CHANGELOG.md ---------)
-
-# CHANGELOG.md:
-# 	@echo "Generating CHANGELOG.md..."
-# 	@rm -f $@
-# 	@git log --format="## %s (%ad)" --date=short --oneline > $@
-# 	@echo "CHANGELOG.md generated."
 # ------------------------------------ #
 
 # ------- Docker Containers ---------- #

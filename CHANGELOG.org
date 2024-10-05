@@ -1,0 +1,31 @@
+#+TITLE: dimagid/arithmetic Changelog
+
+* Unreleased
+
+* [0.0.4] - 2024-10-05
+** Updated
+- chore(deps): update libraries to the latest version:
+
+| :file    | :name                         | :current | :latest |
+|----------+-------------------------------+----------+---------|
+| deps.edn | io.github.clojure/tools.build |   0.10.3 |  0.10.5 |
+|          | org.clojure/clojure           |   1.11.3 |  1.12.0 |
+
+* [0.0.3] - 2024-10-04
+** Changed
+- refactor: restore build and changelog files
+- refactor: refactor primes-up-to-n function
+- docs: update documentation
+
+* [0.0.2] - 2024-10-03
+** Changed
+- refactor: refactor nth-prime
+- docs: update documentation
+
+* [0.0.1] - 2024-10-02
+** Added
+- feat: add initial alpha release
+
+* [Initial Commit] - 2024-10-02
+** Init
+- init: initialize commit template
