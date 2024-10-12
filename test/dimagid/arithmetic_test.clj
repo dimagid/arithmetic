@@ -181,3 +181,49 @@
       (is (not (:prime? result)))
       (is (not (:perfect-square? result)))
       (is (not (:perfect-cube? result))))))
+
+(deftest times-table-test
+  (testing "times-table prints the correct multiplication table"
+    (let [output (with-out-str (arithmetic/times-table 5))]
+      (is (re-find #".*5 x 1 = 5.*" output))
+      (is (re-find #".*5 x 2 = 10.*" output))
+      (is (re-find #".*5 x 3 = 15.*" output))
+      (is (re-find #".*5 x 4 = 20.*" output))
+      (is (re-find #".*5 x 5 = 25.*" output))
+      (is (re-find #".*5 x 6 = 30.*" output))
+      (is (re-find #".*5 x 7 = 35.*" output))
+      (is (re-find #".*5 x 8 = 40.*" output))
+      (is (re-find #".*5 x 9 = 45.*" output))
+      (is (re-find #".*5 x 10 = 50.*" output)))))
+
+(deftest times-table-test-zero
+  (testing "times-table prints the correct multiplication table for zero"
+    (let [output (with-out-str (arithmetic/times-table 0))]
+      (is (re-find #".*0 x 1 = 0.*" output))
+      (is (re-find #".*0 x 2 = 0.*" output))
+      (is (re-find #".*0 x 3 = 0.*" output))
+      (is (re-find #".*0 x 4 = 0.*" output))
+      (is (re-find #".*0 x 5 = 0.*" output))
+      (is (re-find #".*0 x 6 = 0.*" output))
+      (is (re-find #".*0 x 7 = 0.*" output))
+      (is (re-find #".*0 x 8 = 0.*" output))
+      (is (re-find #".*0 x 9 = 0.*" output))
+      (is (re-find #".*0 x 10 = 0.*" output)))))
+
+(deftest times-table-test-negative
+  (testing "times-table prints the correct multiplication table for a negative number"
+    (let [output (with-out-str (arithmetic/times-table -5))]
+      (is (re-find #".*-5 x 1 = -5.*" output))
+      (is (re-find #".*-5 x 2 = -10.*" output))
+      (is (re-find #".*-5 x 3 = -15.*" output))
+      (is (re-find #".*-5 x 4 = -20.*" output))
+      (is (re-find #".*-5 x 5 = -25.*" output))
+      (is (re-find #".*-5 x 6 = -30.*" output))
+      (is (re-find #".*-5 x 7 = -35.*" output))
+      (is (re-find #".*-5 x 8 = -40.*" output))
+      (is (re-find #".*-5 x 9 = -45.*" output))
+      (is (re-find #".*-5 x 10 = -50.*" output)))))
+
+(deftest test-times-table
+  (testing "n must be an integer"
+    (is (thrown? AssertionError (arithmetic/times-table 3.3)))))

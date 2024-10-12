@@ -164,7 +164,7 @@
   "Computes a summary of the arithmetic properties of a natural number `n`, as a data structure.
 
   Example:
-
+  (number-summary 16)
   {:n 16,
    :spellout-number \"sixteen\",
    :scale \"tens\",
@@ -198,3 +198,24 @@
          :prime? (= ret-prime-factors (vector n))
          :perfect-square? (is-perfect-square-or-cube? n math/sqrt)
          :perfect-cube? (is-perfect-square-or-cube? n math/cbrt)})))
+
+(defn times-table
+  "Prints the multiplication table for a given integer number `n`.
+
+  Example:
+  (times-table 7)
+  7 x 1 = 7
+  7 x 2 = 14
+  7 x 3 = 21
+  7 x 4 = 28
+  7 x 5 = 35
+  7 x 6 = 42
+  7 x 7 = 49
+  7 x 8 = 56
+  7 x 9 = 63
+  7 x 10 = 70
+  "
+  [n]
+  {:pre [(integer? n)]}
+  (doseq [i (range 1 11)]
+    (println (format "%d x %d = %d" n i (* n i)))))

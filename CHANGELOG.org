@@ -2,6 +2,10 @@
 
 * Unreleased
 
+* [0.0.5] - 2024-10-12
+** Added
+- feat: add times-table function.
+
 * [0.0.4] - 2024-10-05
 ** Updated
 - chore(deps): update libraries to the latest version:
